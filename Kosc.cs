@@ -9,8 +9,11 @@ namespace Gra_w_kosci_2026_konsola
 {
     internal class Kosc
     {
+        private static Random Losowanie = new Random();
         public static int LiczbaInstancji;
+
         public string[] NazwyPlikow = {"kosc0.png", "kosc1.png", "kosc2.png", "kosc3.png", "kosc4.png", "kosc5.png", "kosc6.png"};
+        
         public int LiczbaOczek;
         public int IdentyfikatorPlikuGraficznego;
         public bool CzyDostepna;
@@ -30,10 +33,12 @@ namespace Gra_w_kosci_2026_konsola
 
         public Kosc()
         {
-            int LosowaLiczba = new Random().Next(1, 7);
+            int LosowaLiczba = Losowanie.Next(1, 7);
+
             this.LiczbaOczek = LosowaLiczba;
             this.IdentyfikatorPlikuGraficznego = LosowaLiczba;
             this.CzyDostepna = true;
+
             Kosc.LiczbaInstancji++;
         }
 
@@ -41,7 +46,8 @@ namespace Gra_w_kosci_2026_konsola
         {
             if(CzyDostepna == true)
             {
-                int LosowaLiczba = new Random().Next(1, 7);
+                int LosowaLiczba = Losowanie.Next(1, 7);
+
                 this.LiczbaOczek = LosowaLiczba;
                 this.IdentyfikatorPlikuGraficznego = LosowaLiczba;
             }
@@ -54,9 +60,8 @@ namespace Gra_w_kosci_2026_konsola
 
         public string ZwrocWyrzuconaWartosc()
         {
-            string[] Wartosci = { "jeden", "dwa", "trzy", "cztery", "pięć", "sześć" };
-            string WartoscSlownie = Wartosci[this.LiczbaOczek - 1];
-            return WartoscSlownie;
+            string[] Wartosci = { "zero", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć" };
+            return Wartosci[this.LiczbaOczek];
         }
     }
 }
