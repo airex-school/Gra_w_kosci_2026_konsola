@@ -28,6 +28,7 @@ namespace Gra_w_kosci_2026_konsola
             this.LiczbaOczek = WartoscWyrzuconejKosci;
             this.IdentyfikatorPlikuGraficznego = WartoscWyrzuconejKosci;
             this.CzyDostepna = true;
+            
             Kosc.LiczbaInstancji++;
         }
 
